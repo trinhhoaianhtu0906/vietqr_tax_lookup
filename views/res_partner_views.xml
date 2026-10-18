@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_form_vietqr" model="ir.ui.view">
+        <field name="name">res.partner.form.vietqr</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <div colspan="2" class="d-flex justify-content-end" invisible="not is_company">
+                    <button name="action_vietqr_fetch_tax_info"
+                            type="object"
+                            string="Lấy thông tin MST"
+                            icon="fa-search"
+                            class="btn-link"
+                            help="Tự điền tên, địa chỉ và thông tin doanh nghiệp từ mã số thuế qua VietQR"/>
+                </div>
+                <field name="vietqr_short_name" invisible="not is_company or not vietqr_short_name"/>
+                <field name="vietqr_international_name" invisible="not is_company or not vietqr_international_name"/>
+                <field name="vietqr_tax_status" invisible="not is_company or not vietqr_tax_status"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
