@@ -9,10 +9,10 @@
                 <div colspan="2" class="d-flex justify-content-end" invisible="not is_company">
                     <button name="action_vietqr_fetch_tax_info"
                             type="object"
-                            string="Lấy thông tin MST"
+                            string="Fetch Tax ID Info"
                             icon="fa-search"
                             class="btn-link"
-                            help="Tự điền tên, địa chỉ và thông tin doanh nghiệp từ mã số thuế qua VietQR"/>
+                            help="Fill the name, address and company details from the tax ID through VietQR"/>
                 </div>
                 <field name="vietqr_short_name" invisible="not is_company or not vietqr_short_name"/>
                 <field name="vietqr_international_name" invisible="not is_company or not vietqr_international_name"/>

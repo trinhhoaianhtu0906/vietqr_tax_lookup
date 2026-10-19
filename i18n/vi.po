@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vietqr_tax_lookup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: vietqr_tax_lookup
+#: model:ir.model,name:vietqr_tax_lookup.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: vietqr_tax_lookup
+#. odoo-python
+#: code:addons/vietqr_tax_lookup/models/res_partner.py:0
+msgid "Could not reach VietQR. Please try again later."
+msgstr "Không kết nối được VietQR. Vui lòng thử lại sau."
+
+#. module: vietqr_tax_lookup
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: vietqr_tax_lookup
+#. odoo-python
+#: code:addons/vietqr_tax_lookup/models/res_partner.py:0
+msgid "Enter a valid tax ID (10 digits, or 10 digits-3 digits for a branch) before fetching its information."
+msgstr "Vui lòng nhập MST hợp lệ (10 số, hoặc 10 số-3 số với chi nhánh) trước khi lấy thông tin."
+
+#. module: vietqr_tax_lookup
+#: model_terms:ir.ui.view,arch_db:vietqr_tax_lookup.res_partner_view_form_vietqr
+msgid "Fetch Tax ID Info"
+msgstr "Lấy thông tin MST"
+
+#. module: vietqr_tax_lookup
+#: model_terms:ir.ui.view,arch_db:vietqr_tax_lookup.res_partner_view_form_vietqr
+msgid "Fill the name, address and company details from the tax ID through VietQR"
+msgstr "Tự điền tên, địa chỉ và thông tin doanh nghiệp từ mã số thuế qua VietQR"
+
+#. module: vietqr_tax_lookup
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: vietqr_tax_lookup
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_partner__vietqr_international_name
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_users__vietqr_international_name
+msgid "International Name"
+msgstr "Tên quốc tế"
+
+#. module: vietqr_tax_lookup
+#. odoo-python
+#: code:addons/vietqr_tax_lookup/models/res_partner.py:0
+msgid "Only companies can be looked up by tax ID."
+msgstr "Chỉ tra cứu MST được cho khách hàng doanh nghiệp."
+
+#. module: vietqr_tax_lookup
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_partner__vietqr_short_name
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_users__vietqr_short_name
+msgid "Short Name"
+msgstr "Tên viết tắt"
+
+#. module: vietqr_tax_lookup
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_partner__vietqr_tax_status
+#: model:ir.model.fields,field_description:vietqr_tax_lookup.field_res_users__vietqr_tax_status
+msgid "Tax Status"
+msgstr "Tình trạng MST"
+
+#. module: vietqr_tax_lookup
+#. odoo-python
+#: code:addons/vietqr_tax_lookup/models/res_partner.py:0
+msgid "VietQR"
+msgstr "VietQR"
+
+#. module: vietqr_tax_lookup
+#. odoo-python
+#: code:addons/vietqr_tax_lookup/models/res_partner.py:0
+msgid "VietQR: %(desc)s (tax ID %(tax_code)s)"
+msgstr "VietQR: %(desc)s (MST %(tax_code)s)"

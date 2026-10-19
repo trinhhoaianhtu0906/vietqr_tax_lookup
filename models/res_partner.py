@@ -26,9 +26,9 @@ def _normalize_place(name):
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    vietqr_international_name = fields.Char(string="Tên quốc tế")
-    vietqr_short_name = fields.Char(string="Tên viết tắt")
-    vietqr_tax_status = fields.Char(string="Tình trạng MST")
+    vietqr_international_name = fields.Char(string="International Name")
+    vietqr_short_name = fields.Char(string="Short Name")
+    vietqr_tax_status = fields.Char(string="Tax Status")
 
     @api.model
     def _vietqr_clean_tax_code(self, vat):
@@ -47,12 +47,12 @@ class ResPartner(models.Model):
         except (requests.RequestException, ValueError) as e:
             _logger.warning("VietQR lookup failed for %s: %s", tax_code, e)
             raise UserError(
-                self.env._("Không kết nối được VietQR. Vui lòng thử lại sau.")
+                self.env._("Could not reach VietQR. Please try again later.")
             ) from e
         if payload.get("code") != "00" or not payload.get("data"):
             raise UserError(
                 self.env._(
-                    "VietQR: %(desc)s (MST %(tax_code)s)",
+                    "VietQR: %(desc)s (tax ID %(tax_code)s)",
                     desc=payload.get("desc") or payload.get("code"),
                     tax_code=tax_code,
                 )
@@ -97,14 +97,14 @@ class ResPartner(models.Model):
         for partner in self:
             if not partner.is_company:
                 raise UserError(
-                    self.env._("Chỉ tra cứu MST được cho khách hàng doanh nghiệp.")
+                    self.env._("Only companies can be looked up by tax ID.")
                 )
             tax_code = self._vietqr_clean_tax_code(partner.vat)
             if not tax_code:
                 raise UserError(
                     self.env._(
-                        "Vui lòng nhập MST hợp lệ (10 số, hoặc 10 số-3 số"
-                        " với chi nhánh) trước khi lấy thông tin."
+                        "Enter a valid tax ID (10 digits, or 10 digits-3 digits"
+                        " for a branch) before fetching its information."
                     )
                 )
             data = self._vietqr_fetch_business(tax_code)
